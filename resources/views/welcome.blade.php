@@ -72,8 +72,9 @@ body {
   <div class="relative w-full min-h-screen bg-cover bg-center mx-auto custom-background max-w-['2536px']">
     <div
       class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl p-8 bg-transparent text-white">
-      <h1 class="text-3xl font-bold mb-4 text-center">Exclusive Priority Banking <br><span>Privileges that Include your
-          family too</span></h1>
+      <h1 class="text-2xl mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto">Exclusive Priority Banking Privileges
+        that Include your
+        family too</h1>
       <form class="mt-64" action="{{ route('save') }}" method="POST">
         @csrf
         <div class="w-full lg:max-w-3/4">
@@ -159,7 +160,7 @@ body {
         <!-- button -->
         <div class="text-center mt-10">
           <button type="submit"
-            class="px-10 py-2 bg-transparent border border-white text-white rounded-full hover:bg-gray-600 mb-5">
+            class="px-10 py-2 bg-transparent border border-white text-white rounded-full hover:bg-gray-600 mb-10">
             SUBMIT
           </button>
         </div>
