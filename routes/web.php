@@ -32,9 +32,9 @@ Route::post('save-data', function (DataRequest $request) {
            'mobile' => $request->mobile,
            'city' => $request->city
         ]);
-        return redirect()->back()->with('success', 'Data saved successfully!');
+        return redirect()->back()->with('success', 'Congratulation! You have Successfully Submitted!');
     }catch (Exception $exception) {
-        return redirect()->back()->with('error', 'An error occurred while saving the data.');
+        return redirect()->back()->with('error', 'Something Went Wrong.');
     }
 
 })->name('save');

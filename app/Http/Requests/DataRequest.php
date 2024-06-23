@@ -23,7 +23,7 @@ class DataRequest extends FormRequest
     {
         return [
             'full_name' => 'required|string',
-            'mobile' => 'required|number',
+            'mobile' => 'required|string',
             'city' => 'required|string',
         ];
     }
