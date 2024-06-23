@@ -32,7 +32,7 @@ Route::post('save-data', function (DataRequest $request) {
            'mobile' => $request->mobile,
            'city' => $request->city
         ]);
-        return redirect()->back()->with('success', 'Congratulation! You have Successfully Submitted!');
+        return redirect()->back()->with('success', 'For choosing Standard Chartered Priority! A relationship manager of Standard Chartered will contact you shortly');
     }catch (Exception $exception) {
         return redirect()->back()->with('error', 'Something Went Wrong.');
     }

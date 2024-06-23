@@ -78,9 +78,10 @@ body {
         family too</h1>
       <form class="mt-64" action="{{ route('save') }}" method="POST">
         @csrf
-        <div class="w-full lg:max-w-3/4">
-          <h3 class="text-[1.857rem]">Thank you for choosing Standard Chartered Priority!</h3>
-          <p>Please share your name, phone number and city below. A relationship manager of Standard Chartered
+        <div class="w-full lg:max-w-5xl">
+          <h3 class="text-[1.857rem] w-full lg:max-w-5xl">Thank you for choosing Standard Chartered Priority!</h3>
+          <p class="w-full lg:max-w-5xl">Please share your name, phone number and city below. A relationship manager of
+            Standard Chartered
             will
             contact you shortly.</p>
         </div>
