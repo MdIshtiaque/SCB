@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Requests\DataRequest;
+use App\Models\Record;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    $items = Record::all();
+    return view('pages.dashboard', ['items' => $items]);
+})->name('dashboard');
+
+
+Route::post('save-data', function (DataRequest $request) {
+    try {
+        Record::create([
+           'full_name' => $request->full_name,
+           'mobile' => $request->mobile,
+           'city' => $request->city
+        ]);
+        return redirect()->back()->with('success', 'Data saved successfully!');
+    }catch (Exception $exception) {
+        return redirect()->back()->with('error', 'An error occurred while saving the data.');
+    }
+
+})->name('save');
