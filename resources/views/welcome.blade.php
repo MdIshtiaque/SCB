@@ -72,7 +72,8 @@ body {
   <div class="relative w-full min-h-screen bg-cover bg-center mx-auto custom-background max-w-['2536px']">
     <div
       class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl p-8 bg-transparent text-white">
-      <h1 class="text-2xl mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto">Exclusive Priority Banking Privileges
+      <h1 class="text-2xl mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto max-w-2xl">Exclusive Priority Banking
+        Privileges
         that Include your
         family too</h1>
       <form class="mt-64" action="{{ route('save') }}" method="POST">
