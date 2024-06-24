@@ -141,11 +141,11 @@
                 }
 
                 // Validate Mobile Number
-                const mobilePattern = /^[0-9]{11}$/; // Example pattern, adjust as necessary
+                const mobilePattern = /^01[3-9]\d{8}$/; // Bangladeshi mobile number pattern
                 if (!mobilePattern.test(mobile.value.trim())) {
                     console.log('Mobile Number validation failed');
                     valid = false;
-                    showError(mobile, 'Please enter a valid 11-digit mobile number');
+                    showError(mobile, 'Please enter a valid 11-digit mobile number (e.g., 017XXXXXXXX)');
                 }
 
                 // Validate City
@@ -161,14 +161,45 @@
                 }
             });
 
+            // Real-time validation
+            fullName.addEventListener('input', () => {
+                clearError(fullName);
+                if (fullName.value.trim() === '') {
+                    showError(fullName, 'Full Name is required');
+                }
+            });
+
+            mobile.addEventListener('input', () => {
+                clearError(mobile);
+                const mobilePattern = /^01[3-9]\d{8}$/; // Bangladeshi mobile number pattern
+                if (!mobilePattern.test(mobile.value.trim())) {
+                    showError(mobile, 'Please enter a valid 11-digit mobile number (e.g., 017XXXXXXXX)');
+                }
+            });
+
+            city.addEventListener('change', () => {
+                clearError(city);
+                if (city.value === '') {
+                    showError(city, 'Please select a city');
+                }
+            });
+
             function showError(input, message) {
                 const error = document.createElement('p');
                 error.className = 'error text-red-500 text-xs absolute -bottom-5 left-0 pl-10';
                 error.textContent = message;
                 input.parentElement.appendChild(error);
             }
+
+            function clearError(input) {
+                const error = input.parentElement.querySelector('.error');
+                if (error) {
+                    error.remove();
+                }
+            }
         });
     </script>
+
 
 @endpush
 
