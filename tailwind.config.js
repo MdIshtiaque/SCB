@@ -4,18 +4,22 @@ import forms from '@tailwindcss/forms';
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
     ],
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            backgroundImage: {
+                'gradient-bottom-dark': "linear-gradient(to bottom, rgba(255, 255, 255, 0) 75%, rgba(0, 0, 0, 0.8) 100%), url('/images/background-image.png')"
             },
-        },
+            colors: {
+                'custom-blue': 'rgba(5, 116, 234, 0.1)',
+                'custom-green': 'rgba(56, 210, 0, 0.1)',
+            },
+        }
     },
 
-    plugins: [forms],
+    plugins: [],
 };
