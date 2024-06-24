@@ -31,6 +31,18 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            <div class="row g-3 d-flex justify-content-end">
+                                <div class="col-md-3">
+                                    <input type="date" id="minDate" name="minDate" class="form-control" data-column="4">
+                                    <small class="form-text text-muted">From Date</small>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="date" id="maxDate" name="maxDate" class="form-control" data-column="4">
+                                    <small class="form-text text-muted">To Date</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
                             <div class="table-responsive">
                                 <table id="datatable-buttons"
                                        class="table table-bordered dt-responsive nowrap w-100 text-center">
@@ -81,5 +93,5 @@
     <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
-    <!-- Sweet Alerts js -->
+    <script src="{{ asset('assets/js/dateFilter.js') }}"></script>
 @endpush

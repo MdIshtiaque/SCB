@@ -12,7 +12,7 @@ $(document).ready(function() {
             // Ensure we use the same column for both min and max date inputs
             var columnIndex = minDateColumnIndex; // Assuming both dates are in the same column
 
-            var date = new Date(data[columnIndex]); // Use the columnIndex directly
+            var date = new Date(data[columnIndex].split('-').reverse().join('-')); // Convert dd-mm-yyyy to yyyy-mm-dd
 
             // Extend the 'max' date to the end of the day
             var startDate = min ? new Date(min) : null;

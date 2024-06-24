@@ -2,13 +2,13 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <a href="#" class="logo logo-dark">
+            <div class="navbar-brand-box text-center pe-5">
+                <a href="{{ route('dashboard') }}" class="logo logo-dark">
                                 <span class="logo-sm">
+                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24">
                                 </span>
                     <span class="logo-lg">
-                                    <span
-                                class="logo-txt">SCB</span>
+                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="30">
                                 </span>
                 </a>
 
@@ -17,8 +17,7 @@
                                     <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24"> <span
-                                class="logo-txt">SCB</span>
+                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24">
                                 </span>
                 </a>
             </div>
@@ -65,28 +64,29 @@
                     <i data-feather="sun" class="icon-lg layout-mode-light"></i>
                 </button>
             </div>
-{{--            <div class="dropdown d-none d-sm-inline-block">--}}
-{{--                <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                    <!-- Display flag based on current app locale -->--}}
-{{--                    <img src="{{ asset('assets/images/flags/' . app()->getLocale() . '.jpg') }}" alt="flag" height="16">--}}
-{{--                </button>--}}
-{{--                <div class="dropdown-menu dropdown-menu-end">--}}
-{{--                    <!-- Language item for Hindi -->--}}
-{{--                    <a href="{{ request()->url() }}?lang=hi" class="dropdown-item notify-item language" data-lang="hi">--}}
-{{--                        <img src="{{ asset('assets/images/flags/hi.jpg') }}" alt="Hindi flag" class="me-1" height="12"> <span class="align-middle">Hindi</span>--}}
-{{--                    </a>--}}
-{{--                    <!-- Language item for English -->--}}
-{{--                    <a href="{{ request()->url() }}?lang=en" class="dropdown-item notify-item language" data-lang="en">--}}
-{{--                        <img src="{{ asset('assets/images/flags/en.jpg') }}" alt="US flag" class="me-1" height="12"> <span class="align-middle">English</span>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="dropdown d-inline-block">--}}
-{{--                <button type="button" class="btn header-item right-bar-toggle me-2">--}}
-{{--                    <i data-feather="settings" class="icon-lg"></i>--}}
-{{--                </button>--}}
-{{--            </div>--}}
 
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item bg-light-subtle border-start border-end"
+                        id="page-header-user-dropdown"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium">{{ auth()->user()->name }}</span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+{{--                    <a class="dropdown-item" href="apps-contacts-profile.html"><i--}}
+{{--                            class="mdi mdi mdi-face-man font-size-16 align-middle me-1"></i> Profile</a>--}}
+{{--                    <a class="dropdown-item" href="auth-lock-screen.html"><i--}}
+{{--                            class="mdi mdi-lock font-size-16 align-middle me-1"></i> Lock Screen</a>--}}
+{{--                    <div class="dropdown-divider"></div>--}}
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="dropdown-item" href="auth-logout.html"><i
+                                class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout
+                        </button>
+                    </form>
+                </div>
+            </div>
 
         </div>
     </div>
