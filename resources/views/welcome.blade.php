@@ -69,17 +69,18 @@ body {
 <body class="bg-black">
 
 
-  <div class="relative w-full min-h-screen bg-cover bg-center mx-auto custom-background max-w-['2536px']">
+  <div class="relative w-full min-h-screen bg-cover bg-center mx-auto custom-background max-w-[2536px]">
     <div
       class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-5xl p-8 bg-transparent text-white">
-      <h1 class="text-2xl mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto max-w-2xl">Exclusive Priority Banking
+      <h1 class="text-3xl mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto max-w-2xl">Exclusive Priority Banking
         Privileges
         that Include your
         family too</h1>
       <form class="mt-64" action="{{ route('save') }}" method="POST">
         @csrf
         <div class="w-full lg:max-w-3xl">
-          <h3 class="text-[1.857rem] w-full lg:max-w-3xl">Thank you for choosing Standard Chartered Priority!</h3>
+          <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl">Thank you for choosing Standard Chartered Priority!
+          </h3>
           <p class="w-full lg:max-w-3xl">Please share your name, phone number and city below. A relationship manager of
             Standard Chartered
             will
