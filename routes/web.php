@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FormController;
 use App\Http\Requests\DataRequest;
 use App\Models\Record;
 use Illuminate\Support\Facades\Route;
@@ -18,24 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
    return view('welcome');
-});
-Route::post('save-data', function (DataRequest $request) {
-    try {
-        Record::create([
-            'full_name' => $request->full_name,
-            'mobile' => $request->mobile,
-            'city' => $request->city
-        ]);
-        return redirect()->back()->with('success', 'For choosing Standard Chartered Priority! A relationship manager of Standard Chartered will contact you shortly');
-    }catch (Exception $exception) {
-        return redirect()->back()->with('error', 'Something Went Wrong.');
-    }
+})->name('home');
 
-})->name('save');
+Route::post('save-data', [FormController::class, 'storeData'])->name('save');
 
 Route::get('success', function () {
     return view('success');
-});
+})->name('success');
 Route::get('/login', function () {
     return view('auth.login');
 });
