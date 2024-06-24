@@ -4,12 +4,12 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Login | wc-admin</title>
+    <title>Login | SCB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="SCB Priority List" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
 
     <!-- preloader css -->
     <link rel="stylesheet" href="assets/css/preloader.min.css" type="text/css" />

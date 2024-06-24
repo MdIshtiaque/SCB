@@ -1,10 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FormController;
-use App\Http\Requests\DataRequest;
-use App\Models\Record;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -6,6 +6,16 @@
           type="text/css"/>
     <link href="{{ asset('assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
           type="text/css"/>
+    <style>
+        .dataTables_wrapper .bottom {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            /*margin-top: 15px;*/
+            padding-top: 15px;
+            gap: 20px;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -42,7 +52,8 @@
                                 </div>
                                 <div class="col-md-1">
                                     <a href="#"
-                                       type="button" id="resetButton" class="btn btn-dark btn-sm waves-effect waves-light d-flex align-items-center justify-content-center">
+                                       type="button" id="resetButton"
+                                       class="btn btn-dark btn-sm waves-effect waves-light d-flex align-items-center justify-content-center">
                                         <i class="mdi mdi-restart font-size-16 me-2"></i><span>Reset</span>
                                     </a>
                                 </div>
@@ -70,7 +81,7 @@
                                             <td>{{ $item->mobile }}</td>
                                             <td>{{ $item->city }}</td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->format('h:i A') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->setTimezone('Asia/Dhaka')->format('h:i A') }}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -92,17 +103,17 @@
     <!-- Buttons examples -->
     <script src="{{ asset('assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
     <script src="{{ asset('assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script src="{{ asset('assets/libs/jszip/jszip.min.js') }}"></script>
     <script src="{{ asset('assets/libs/pdfmake/build/pdfmake.min.js') }}"></script>
     <script src="{{ asset('assets/libs/pdfmake/build/vfs_fonts.js') }}"></script>
     <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <!-- Datatable init js -->
-    <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script src="{{ asset('assets/js/dateFilter.js') }}"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            $('#resetButton').click(function(e) {
+        document.addEventListener('DOMContentLoaded', function () {
+            $('#resetButton').click(function (e) {
                 e.preventDefault();
                 $('#minDate').val('');
                 $('#maxDate').val('');

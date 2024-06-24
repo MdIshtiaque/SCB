@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
-        <h1 class="text-2xl mt-32 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
+        <h1 class="text-3xl mt-24 lg:mt-36 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
             Exclusive
             Priority
             Banking
@@ -10,7 +10,7 @@
             <span class="block">Privileges that Include your
                 family too</span>
         </h1>
-        <form class="mt-64" action="{{ route('save') }}" method="POST">
+        <form class="mt-12 lg:mt-64" action="{{ route('save') }}" method="POST">
             @csrf
             <div class="w-full lg:max-w-3xl">
                 <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl">Thank you for choosing Standard Chartered
@@ -23,7 +23,7 @@
                     will
                     contact you shortly.</p>
             </div>
-            <div class="mt-8 flex items-center gap-3 mb-10">
+            <div class="mt-8 flex items-center gap-3 mb-4 lg:mb-10">
                 <svg class="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                     <path
@@ -33,7 +33,7 @@
                     class="block w-full px-4 py-2 border border-white rounded-full bg-transparent">
             </div>
 
-            <div class="flex flex-col gap-10 lg:flex-row lg:gap-44 items-center lg:justify-between">
+            <div class="flex flex-col gap-4 gap-10 lg:flex-row lg:gap-44 items-center lg:justify-between">
                 <div class="flex w-full flex-grow-1 items-center gap-3">
                     <svg class="w-6 h-6 fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -55,43 +55,11 @@
                     <select name="city" required
                         class="block w-full max-w-4xl px-4 py-2 border border-white rounded-full bg-transparent">
                         <option class="text-black" value="">Select City</option>
-                        <option class="text-black" value="dhaka">Dhaka</option>
-                        <option class="text-black" value="chattogram">Chattogram</option>
-                        <option class="text-black" value="khulna">Khulna</option>
-                        <option class="text-black" value="rajshahi">Rajshahi</option>
-                        <option class="text-black" value="sylhet">Sylhet</option>
-                        <option class="text-black" value="barisal">Barisal</option>
-                        <option class="text-black" value="mymensingh">Mymensingh</option>
-                        <option class="text-black" value="rangpur">Rangpur</option>
-                        <option class="text-black" value="cumilla">Cumilla</option>
-                        <option class="text-black" value="gazipur">Gazipur</option>
-                        <option class="text-black" value="narayanganj">Narayanganj</option>
-                        <option class="text-black" value="brahmanbaria">Brahmanbaria</option>
-                        <option class="text-black" value="chandpur">Chandpur</option>
-                        <option class="text-black" value="coxs_bazar">Cox's Bazar</option>
-                        <option class="text-black" value="feni">Feni</option>
-                        <option class="text-black" value="lakshmipur">Lakshmipur</option>
-                        <option class="text-black" value="chowmuhani">Chowmuhani</option>
-                        <option class="text-black" value="maijdee">Maijdee</option>
-                        <option class="text-black" value="rangamati">Rangamati</option>
-                        <option class="text-black" value="savar">Savar</option>
-                        <option class="text-black" value="faridpur">Faridpur</option>
-                        <option class="text-black" value="kaliakair">Kaliakair</option>
-                        <option class="text-black" value="sreepur">Sreepur</option>
-                        <option class="text-black" value="gopalganj">Gopalganj</option>
-                        <option class="text-black" value="bhairab">Bhairab</option>
-                        <option class="text-black" value="tongi">Tongi</option>
-                        <option class="text-black" value="bogura">Bogura</option>
-                        <option class="text-black" value="jessore">Jessore</option>
-                        <option class="text-black" value="dinajpur">Dinajpur</option>
-                        <option class="text-black" value="nawabganj">Nawabganj</option>
-                        <option class="text-black" value="tangail">Tangail</option>
-                        <option class="text-black" value="sirajganj">Sirajganj</option>
-                        <option class="text-black" value="naogaon">Naogaon</option>
-                        <option class="text-black" value="pabna">Pabna</option>
-                        <option class="text-black" value="habiganj">Habiganj</option>
-                        <option class="text-black" value="mongla">Mongla</option>
-                        <option class="text-black" value="feni_sadar">Feni Sadar</option>
+                        <option class="text-black" value="Dhaka">Dhaka</option>
+                        <option class="text-black" value="Chattogram">Chattogram</option>
+                        <option class="text-black" value="Sylhet">Sylhet</option>
+                        <option class="text-black" value="Khulna">Khulna</option>
+                        <option class="text-black" value="Bogura">Bogura</option>
                     </select>
                 </div>
 
@@ -100,7 +68,7 @@
             <!-- button -->
             <div class="text-center mt-10">
                 <button type="submit"
-                    class="px-10 py-2 bg-transparent border border-white text-white rounded-full hover:bg-gray-600 mb-10">
+                    class="px-10 py-2 bg-transparent hover:bg-gradient-to-r from-[#0574EA] to-[#38D200] transition-colors duration-300 outline outline-1 text-white rounded-full hover:bg-gray-600 mb-10 hover:outline-none">
                     SUBMIT
                 </button>
             </div>
@@ -115,7 +83,7 @@
                 </svg>
                 <h3 class="text-xl">What is in the store for you:</h3>
             </div>
-            <ul class="list-disc list-inside mt-5">
+            <ul class="list-disc mt-5 pl-4">
                 <li>Dedicated Relationship Manager</li>
                 <li>Dedicated Priority Center</li>
                 <li>Access for Airport Lounge</li>

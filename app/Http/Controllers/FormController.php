@@ -9,7 +9,8 @@ use Exception;
 
 class FormController extends Controller
 {
-    public function storeData(DataRequest $request) {
+    public function storeData(DataRequest $request)
+    {
         try{
             Record::create([
                 'full_name' => $request->full_name,
