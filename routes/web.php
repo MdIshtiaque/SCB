@@ -32,6 +32,10 @@ Route::post('save-data', function (DataRequest $request) {
     }
 
 })->name('save');
+
+Route::get('success', function () {
+    return view('success');
+});
 Route::get('/login', function () {
     return view('auth.login');
 });
