@@ -1,41 +1,26 @@
 name: Deploy Laravel Project on push
-
 on:
   push:
     branches:
       - main
-
 jobs:
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
+      - name: Get the latest code
         uses: actions/checkout@v2.3.2
-
-      - name: Set Up Node.js
-        uses: actions/setup-node@master
-
-      - name: Install PHP Dependencies
+      - uses: actions/setup-node@master
+      - name: Install Dependencies
         run: composer install --ignore-platform-reqs
-
-      - name: Install Node.js Dependencies
-        run: npm install
-
-      - name: Generate Storage Symlink
+      - name: Generate storage link
         run: php artisan storage:link
-
-      - name: Set Directory Permissions
+      - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
-
-      - name: Upload Files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
-          exclude: |
-            .env
-            .htaccess
