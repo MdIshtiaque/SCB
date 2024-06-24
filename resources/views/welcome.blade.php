@@ -70,12 +70,12 @@
 
 
     <div class="relative w-full min-h-screen bg-cover bg-center mx-auto custom-background max-w-[2536px]">
-        <div class="absolute top-0 left-0 w-full max-w-7xl">
-            <img class="h-10 mt-8 ml-8" src="{{ asset('images/logo.png') }}" alt="company-logo">
+        <div class="absolute top-8 left-8">
+            <img class="h-10" src="{{ asset('images/logo.png') }}" alt="company-logo">
         </div>
         <div
             class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
-            <h1 class="text-2xl mt-32 lg:mt-10 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3">
+            <h1 class="text-2xl mt-32 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
                 Exclusive
                 Priority
                 Banking
@@ -89,7 +89,8 @@
                     <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl">Thank you for choosing Standard Chartered
                         Priority!
                     </h3>
-                    <p class="w-full lg:max-w-3xl">Please share your name, phone number and city below. A relationship
+                    <p class="w-full lg:max-w-3xl mt-5">Please share your name, phone number and city below. A
+                        relationship
                         manager of
                         Standard Chartered
                         will
