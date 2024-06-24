@@ -1,7 +1,5 @@
 @extends('main')
-<!--@push('css')-->
-<!--    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>-->
-<!--@endpush-->
+
 @section('content')
     <div
         class="absolute h-full top-1/2 lg:top-0 left-1/2 transform -translate-x-1/2 w-full p-8 bg-transparent flex items-center justify-center flex-col gap-10">
