@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Requests\DataRequest;
 use App\Models\Record;
 use Illuminate\Support\Facades\Route;
@@ -14,23 +16,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    $items = Record::all();
-    return view('pages.dashboard', ['items' => $items]);
-})->name('dashboard');
-
-
 Route::post('save-data', function (DataRequest $request) {
     try {
         Record::create([
-           'full_name' => $request->full_name,
-           'mobile' => $request->mobile,
-           'city' => $request->city
+            'full_name' => $request->full_name,
+            'mobile' => $request->mobile,
+            'city' => $request->city
         ]);
         return redirect()->back()->with('success', 'For choosing Standard Chartered Priority! A relationship manager of Standard Chartered will contact you shortly');
     }catch (Exception $exception) {
@@ -38,3 +32,10 @@ Route::post('save-data', function (DataRequest $request) {
     }
 
 })->name('save');
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
