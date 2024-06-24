@@ -40,6 +40,12 @@
                                     <input type="date" id="maxDate" name="maxDate" class="form-control" data-column="4">
                                     <small class="form-text text-muted">To Date</small>
                                 </div>
+                                <div class="col-md-1">
+                                    <a href="#"
+                                       type="button" id="resetButton" class="btn btn-dark btn-sm waves-effect waves-light d-flex align-items-center justify-content-center">
+                                        <i class="mdi mdi-restart font-size-16 me-2"></i><span>Reset</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -94,4 +100,15 @@
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/pages/datatables.init.js') }}"></script>
     <script src="{{ asset('assets/js/dateFilter.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $('#resetButton').click(function(e) {
+                e.preventDefault();
+                $('#minDate').val('');
+                $('#maxDate').val('');
+                // Clear all search filters
+                window.table.search('').columns().search('').draw();
+            });
+        })
+    </script>
 @endpush

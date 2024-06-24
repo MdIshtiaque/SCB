@@ -41,4 +41,7 @@ $(document).ready(function() {
     $('#minDate, #maxDate').change(function() {
         table.draw();
     });
+
+    // Make table variable accessible globally
+    window.table = table;
 });
