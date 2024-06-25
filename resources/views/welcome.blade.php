@@ -22,10 +22,10 @@
         <form class="mt-12 lg:mt-64" action="{{ route('save') }}" method="POST">
             @csrf
             <div class="w-full lg:max-w-3xl">
-                <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl">Thank you for choosing Standard Chartered
+                <h3 class="text-lg lg:text-2xl w-full lg:max-w-3xl">Thank you for choosing Standard Chartered
                     Priority!
                 </h3>
-                <p class="w-full lg:max-w-3xl mt-5">Please share your name, phone number and city below. A
+                <p class="w-full lg:max-w-3xl mt-4">Please share your name, phone number and city below. A
                     relationship
                     Standard Chartered
                     will
