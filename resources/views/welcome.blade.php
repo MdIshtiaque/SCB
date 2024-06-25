@@ -2,7 +2,7 @@
 @section('content')
     <div class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
         <h1
-            class="text-2xl min-w-64 mt-24 lg:mt-36 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
+            class="title text-2xl min-w-64 mt-24 lg:mt-36 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
             <span><svg class="inline-block mr-1 lg:mr-2 h-2 lg:h-4" viewBox="0 0 26 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
