@@ -20,20 +20,28 @@ body {
 }
 
 .custom-background {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 1) 95%),
-    url('../../public/images/background-image.png');
+    background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.5) 20%,
+            rgba(0, 0, 0, 0.7) 60%,
+            rgba(0, 0, 0, 1) 95%
+        ),
+        url("../../public/images/background-image.png");
     width: 100%;
-
 }
 
- input::-webkit-outer-spin-button,
- input::-webkit-inner-spin-button {
-     /* display: none; <- Crashes Chrome on hover */
-     -webkit-appearance: none;
-     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
- }
-
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+select {
+    -webkit-appearance: none; /* for webkit (safari, chrome) compatibility */
+    -moz-appearance: none; /* for firefox compatibility */
+    appearance: none;
+}
