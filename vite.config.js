@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import { viteSingleFile } from "vite-plugin-singlefile";
 
 export default defineConfig({
     plugins: [
@@ -13,11 +12,14 @@ export default defineConfig({
         }),
     ],
     build: {
-        outDir: 'public/build/',
         rollupOptions: {
             output: {
-                entryFileNames: 'assets/main.js',
-                assetFileNames: 'assets/index.css'
+                entryFileNames: 'js/main.js',       // Output JavaScript as main.js
+                chunkFileNames: 'js/[name].js',     // Name chunks logically
+                assetFileNames: ({ name }) => {
+                    if (name.endsWith('.css')) return 'css/index.css'; // Output CSS as index.css
+                    return 'assets/[name].[ext]';  // Output other assets
+                }
             }
         }
     }

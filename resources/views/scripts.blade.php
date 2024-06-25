@@ -1,3 +1,3 @@
 {{--@vite('resources/js/main.js')--}}
- <script src="{{ asset('build/assets/main.js') }}"></script>
+ <script src="{{ asset('build/js/main.js') }}"></script>
 @stack('js')

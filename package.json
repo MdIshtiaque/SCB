@@ -16,6 +16,5 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
-        "vite-plugin-singlefile": "^2.0.2"
     }
 }

@@ -1,63 +1,63 @@
 {
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Bold.otf": {
-    "file": "assets/index6.css",
+    "file": "assets/SCProsperSans-Bold.otf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Bold.otf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Medium.otf": {
-    "file": "assets/index4.css",
+    "file": "assets/SCProsperSans-Medium.otf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Medium.otf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Regular.otf": {
-    "file": "assets/index2.css",
+    "file": "assets/SCProsperSans-Regular.otf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Regular.otf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Bold.ttf": {
-    "file": "assets/index12.css",
+    "file": "assets/SCProsperSans-Bold.ttf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Bold.ttf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Medium.ttf": {
-    "file": "assets/index10.css",
+    "file": "assets/SCProsperSans-Medium.ttf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Medium.ttf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Regular.ttf": {
-    "file": "assets/index8.css",
+    "file": "assets/SCProsperSans-Regular.ttf",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Regular.ttf"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff": {
-    "file": "assets/index11.css",
+    "file": "assets/SCProsperSans-Bold.woff",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff2": {
-    "file": "assets/index5.css",
+    "file": "assets/SCProsperSans-Bold.woff2",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff2"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff": {
-    "file": "assets/index9.css",
+    "file": "assets/SCProsperSans-Medium.woff",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff2": {
-    "file": "assets/index3.css",
+    "file": "assets/SCProsperSans-Medium.woff2",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff2"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff": {
-    "file": "assets/index7.css",
+    "file": "assets/SCProsperSans-Regular.woff",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff"
   },
   "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff2": {
-    "file": "assets/index.css",
+    "file": "assets/SCProsperSans-Regular.woff2",
     "src": "public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff2"
   },
   "public/images/background-image.png": {
-    "file": "assets/index13.css",
+    "file": "assets/background-image.png",
     "src": "public/images/background-image.png"
   },
   "resources/css/app.css": {
-    "file": "assets/index14.css",
+    "file": "css/index.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/main.js": {
-    "file": "assets/main.js",
+    "file": "js/main.js",
     "name": "main",
     "src": "resources/js/main.js",
     "isEntry": true
