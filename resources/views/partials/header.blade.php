@@ -27,12 +27,12 @@
             </button>
 
             <!-- App Search-->
-            <form class="app-search d-none d-lg-block">
-                <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>
-                </div>
-            </form>
+{{--            <form class="app-search d-none d-lg-block">--}}
+{{--                <div class="position-relative">--}}
+{{--                    <input type="text" class="form-control" placeholder="Search...">--}}
+{{--                    <button class="btn btn-primary" type="button"><i class="bx bx-search-alt align-middle"></i></button>--}}
+{{--                </div>--}}
+{{--            </form>--}}
         </div>
 
         <div class="d-flex">
@@ -58,12 +58,12 @@
                 </div>
             </div>
 
-            <div class="dropdown d-none d-sm-inline-block">
-                <button type="button" class="btn header-item" id="mode-setting-btn">
-                    <i data-feather="moon" class="icon-lg layout-mode-dark"></i>
-                    <i data-feather="sun" class="icon-lg layout-mode-light"></i>
-                </button>
-            </div>
+{{--            <div class="dropdown d-none d-sm-inline-block">--}}
+{{--                <button type="button" class="btn header-item" id="mode-setting-btn">--}}
+{{--                    <i data-feather="moon" class="icon-lg layout-mode-dark"></i>--}}
+{{--                    <i data-feather="sun" class="icon-lg layout-mode-light"></i>--}}
+{{--                </button>--}}
+{{--            </div>--}}
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item bg-light-subtle border-start border-end"
