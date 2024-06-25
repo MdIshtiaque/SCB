@@ -13,8 +13,8 @@ class RecordsExport implements FromCollection, WithHeadings, WithMapping
     private $serialNumber = 0;
     public function collection()
     {
-        $today = Carbon::today('Asia/Dhaka'); // Today's date in Bangladesh time zone
-        return Record::whereDate('created_at', '=', $today)->get();
+        $yesterday = Carbon::yesterday('Asia/Dhaka');
+        return Record::whereDate('created_at', '=', $yesterday)->get();
     }
 
     public function map($record): array
