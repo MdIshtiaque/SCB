@@ -27,6 +27,6 @@
                 </svg><span>Go
                     to Home</span></a>
         </div>
-
+        @include('footer')
     </div>
 @endsection

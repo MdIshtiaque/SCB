@@ -100,6 +100,7 @@
                 <li>Priority privilege for immediate family</li>
             </ul>
         </div>
+        @include('footer')
     </div>
 @endsection
 @push('js')
