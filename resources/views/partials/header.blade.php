@@ -5,7 +5,7 @@
             <div class="navbar-brand-box text-center pe-5">
                 <a href="{{ route('dashboard') }}" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="24">
+                                    <img src="{{ asset('assets/images/favicon.png') }}" alt="" height="24">
                                 </span>
                     <span class="logo-lg">
                                     <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="30">
