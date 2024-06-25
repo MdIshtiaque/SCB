@@ -15,6 +15,28 @@
             padding-top: 15px;
             gap: 20px;
         }
+        .position-relative {
+            position: relative;
+        }
+
+        #loadingIndicator {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 50;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
     </style>
 @endpush
 
@@ -59,7 +81,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body position-relative">
+                            <div id="loadingIndicator" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 50; display: flex; justify-content: center; align-items: center;">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table id="datatable-buttons"
                                        class="table table-bordered dt-responsive nowrap w-100 text-center">

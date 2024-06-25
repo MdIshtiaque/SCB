@@ -1,6 +1,20 @@
 $(document).ready(function() {
     var table = $('#datatable-buttons').DataTable();
-
+    $('#loadingIndicator').hide();
+    var loaderTimeout; // To store timeout reference
+    // Show loader when drawing starts
+    table.on('preDraw', function() {
+        $('#loadingIndicator').show();
+        // Clear any existing timeout to prevent multiple triggers
+        clearTimeout(loaderTimeout);
+    });
+    // Hide loader when drawing is complete
+    table.on('draw', function() {
+        // Set timeout to hide the loader after 1 second
+        loaderTimeout = setTimeout(function() {
+            $('#loadingIndicator').hide();
+        }, 200); // 1000 milliseconds equals 1 second
+    });
     // Custom filter for date range
     $.fn.dataTable.ext.search.push(
         function(settings, data, dataIndex) {
