@@ -89,7 +89,7 @@
                                 </form>
                             </div>
                             <div class="mt-4 mt-md-5 text-center">
-                                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> SCB</p>
+                                <p class="mb-0">© Standard Chartered <script>document.write(new Date().getFullYear())</script>.</p>
                             </div>
                         </div>
                     </div>
