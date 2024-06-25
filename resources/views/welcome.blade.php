@@ -1,13 +1,22 @@
 @extends('main')
 @section('content')
     <div class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
-        <h1 class="text-3xl mt-24 lg:mt-36 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
-            Exclusive
+        <h1 class="text-xl mt-24 lg:mt-36 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
+            <span><svg class="inline-block mr-2" width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.025 15.2751C10.075 15.7584 9.06664 16.0001 7.99998 16.0001C7.26664 16.0001 6.55831 15.9042 5.87498 15.7126C5.19164 15.5209 4.55414 15.2542 3.96248 14.9126C3.37081 14.5709 2.83331 14.1542 2.34998 13.6626C1.86664 13.1709 1.44998 12.6292 1.09998 12.0376C0.749977 11.4459 0.479143 10.8084 0.287477 10.1251C0.0958099 9.44173 -2.28882e-05 8.73339 -2.28882e-05 8.00006C-2.28882e-05 7.26673 0.0958099 6.55839 0.287477 5.87506C0.479143 5.19173 0.74581 4.55423 1.08748 3.96256C1.42914 3.37089 1.84581 2.83339 2.33748 2.35006C2.82914 1.86673 3.37081 1.45006 3.96248 1.10006C4.55414 0.750061 5.19164 0.479228 5.87498 0.287561C6.55831 0.0958944 7.26664 6.10352e-05 7.99998 6.10352e-05C9.05831 6.10352e-05 10.0625 0.233394 11.0125 0.700061L25.6 7.93756L11.025 15.2751Z"
+                        fill="#007CFF" />
+                </svg></span>Exclusive
             Priority
             Banking
-
             <span class="block">Privileges that Include your
-                family too</span>
+                family too<svg class="inline-block ml-2" width="26" height="16" viewBox="0 0 26 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.575 0.724999C15.525 0.241667 16.5333 0 17.6 0C18.3333 0 19.0417 0.0958328 19.725 0.287499C20.4083 0.479166 21.0458 0.745833 21.6375 1.0875C22.2292 1.42917 22.7667 1.84583 23.25 2.3375C23.7333 2.82917 24.15 3.37083 24.5 3.9625C24.85 4.55417 25.1208 5.19167 25.3125 5.875C25.5042 6.55833 25.6 7.26667 25.6 8C25.6 8.73333 25.5042 9.44167 25.3125 10.125C25.1208 10.8083 24.8542 11.4458 24.5125 12.0375C24.1708 12.6292 23.7542 13.1667 23.2625 13.65C22.7708 14.1333 22.2292 14.55 21.6375 14.9C21.0458 15.25 20.4083 15.5208 19.725 15.7125C19.0417 15.9042 18.3333 16 17.6 16C16.5417 16 15.5375 15.7667 14.5875 15.3L0 8.0625L14.575 0.724999Z"
+                        fill="#38D200" />
+                </svg></span>
         </h1>
         <form class="mt-12 lg:mt-64" action="{{ route('save') }}" method="POST">
             @csrf
@@ -27,7 +36,8 @@
                     <path
                         d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
                 </svg>
-                <input type="text" name="full_name" placeholder="Full Name" class="block w-full px-4 py-2 border border-white rounded-full bg-transparent">
+                <input type="text" name="full_name" placeholder="Full Name"
+                    class="block w-full px-4 py-2 border border-white rounded-full bg-transparent">
             </div>
 
             <div class="flex flex-col gap-6 lg:flex-row lg:gap-44 items-center lg:justify-between">
@@ -184,7 +194,5 @@
                 }
             }
         });
-
     </script>
 @endpush
-
