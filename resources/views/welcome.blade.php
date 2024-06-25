@@ -1,18 +1,4 @@
 @extends('main')
-@push('css')
-    <style>
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            /* display: none; <- Crashes Chrome on hover */
-            -webkit-appearance: none;
-            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-        }
-
-        input[type=number] {
-            -moz-appearance:textfield; /* Firefox */
-        }
-    </style>
-@endpush
 @section('content')
     <div class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
         <h1 class="text-3xl mt-24 lg:mt-36 lg:text-5xl font-bold mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
@@ -145,7 +131,7 @@
                 if (!mobilePattern.test(mobile.value.trim())) {
                     console.log('Mobile Number validation failed');
                     valid = false;
-                    showError(mobile, 'Please enter a valid 11-digit mobile number (e.g., 017XXXXXXXX)');
+                    showError(mobile, 'Please enter a valid 11-digit mobile number');
                 }
 
                 // Validate City
@@ -173,7 +159,7 @@
                 clearError(mobile);
                 const mobilePattern = /^01[3-9]\d{8}$/; // Bangladeshi mobile number pattern
                 if (!mobilePattern.test(mobile.value.trim())) {
-                    showError(mobile, 'Please enter a valid 11-digit mobile number (e.g., 017XXXXXXXX)');
+                    showError(mobile, 'Please enter a valid 11-digit mobile number');
                 }
             });
 
@@ -198,8 +184,7 @@
                 }
             }
         });
+
     </script>
-
-
 @endpush
 

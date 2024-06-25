@@ -1,0 +1,17 @@
+{
+  "public/images/background-image.png": {
+    "file": "assets/index.css",
+    "src": "public/images/background-image.png"
+  },
+  "resources/css/app.css": {
+    "file": "assets/index2.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/main.js": {
+    "file": "assets/main.js",
+    "name": "main",
+    "src": "resources/js/main.js",
+    "isEntry": true
+  }
+}
