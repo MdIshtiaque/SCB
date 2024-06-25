@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\RecordExportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,8 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth'])->name('dashboard');
+
+//Route::get('/export-records', [RecordExportController::class, 'export']);
+
 
 require __DIR__.'/auth.php';
