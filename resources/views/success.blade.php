@@ -2,7 +2,7 @@
 
 @section('content')
     <div
-        class="absolute h-full top-1/2 lg:top-0 left-1/2 transform -translate-x-1/2 w-full p-8 bg-transparent flex items-center justify-center flex-col gap-10">
+        class="absolute h-full top-1/2 lg:top-0 left-1/2 transform -translate-x-1/2 w-full px-8 bg-transparent flex items-center justify-center flex-col gap-10">
 
         <div
             class="flex items-center justify-center flex-col gap-5 max-w-3xl border-gray-400 shadow-sm bg-gradient-to-b from-custom-blue to-custom-green text-center mx-auto p-5 lg:px-24 lg:py-20 text-white backdrop-blur-[2px] rounded-md">
