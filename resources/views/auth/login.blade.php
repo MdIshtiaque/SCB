@@ -34,7 +34,7 @@
                     <div class="w-100">
                         <div class="d-flex flex-column h-100">
                             <div class="mb-4 mb-md-5 text-center">
-                                <a href="index.html" class="d-block auth-logo">
+                                <a href="{{ route('home') }}" class="d-block auth-logo">
                                     <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="55">
                                 </a>
                             </div>
