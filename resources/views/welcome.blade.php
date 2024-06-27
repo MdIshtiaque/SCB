@@ -2,13 +2,9 @@
 @section('content')
     <div class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 bg-transparent text-white">
         <h1
-            class="title text-2xl min-w-64 mt-24 lg:mt-36 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
-            <span><svg class="inline-block mr-1 lg:mr-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M8.47721 16.9384C10.5183 16.9384 11.9709 16.2916 13.388 15.3747L23.9999 8.47019L13.388 1.56572C11.9579 0.644437 10.4559 0.000229891 8.47721 0.000229891C3.82689 0.000229891 -5.96046e-05 3.82349 -5.96046e-05 8.46932C-5.96046e-05 13.1152 3.82689 16.9384 8.47721 16.9384Z"
-                        fill="#0473EA" />
-                </svg></span>Exclusive
+            class="title text-2xl min-w-64 mt-24 lg:mt-36 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3
+            drop-shadow-2xl before:content-['º'] before:text-[#38d200] before:mr-5">
+            Exclusive
             Priority
             Banking
             <span class="block">Privileges that Include your
