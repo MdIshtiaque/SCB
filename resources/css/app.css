@@ -1,11 +1,8 @@
-/* Regular weight for web fonts */
+/* Light weight for web fonts */
 @font-face {
-    font-family: "SC Prosper Sans Regular";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff2")
-            format("woff2"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Regular.woff")
-            format("woff");
-    font-weight: normal;
+    font-family: "SC Prosper Sans Light";
+    src: url("/public/fonts/SCProsperSans-Light.ttf") format("truetype");
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
@@ -13,23 +10,8 @@
 /* Regular weight for OTF/TTF fonts */
 @font-face {
     font-family: "SC Prosper Sans Regular";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Regular.otf")
-            format("opentype"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Regular.ttf")
-            format("truetype");
+    src: url("/public/fonts/SCProsperSans-Regular.ttf") format("truetype");
     font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Medium weight for web fonts */
-@font-face {
-    font-family: "SC Prosper Sans Medium";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff2")
-            format("woff2"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Medium.woff")
-            format("woff");
-    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
@@ -37,35 +19,8 @@
 /* Medium weight for OTF/TTF fonts */
 @font-face {
     font-family: "SC Prosper Sans Medium";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Medium.otf")
-            format("opentype"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Medium.ttf")
-            format("truetype");
+    src: url("/public/fonts/SCProsperSans-Medium.ttf") format("truetype");
     font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Bold weight for web fonts */
-@font-face {
-    font-family: "SC Prosper Sans Bold";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff2")
-            format("woff2"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_web/SCProsperSans-Bold.woff")
-            format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Bold weight for OTF/TTF fonts */
-@font-face {
-    font-family: "SC Prosper Sans Bold";
-    src: url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_otf/SCProsperSans-Bold.otf")
-            format("opentype"),
-        url("/public/fonts/SC_Fonts_2021/sc_sc-prosper-sans_ttf/SCProsperSans-Bold.ttf")
-            format("truetype");
-    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
