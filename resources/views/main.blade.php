@@ -13,10 +13,11 @@
 <body class="bg-black">
 
 
-    <div class="relative w-full h-[calc(60vh)] lg:min-h-screen bg-cover bg-top mx-auto custom-background max-w-[2536px]">
-        <div class="absolute top-8 left-8">
+    <div
+        class="relative w-full h-[calc(60vh)] lg:min-h-screen bg-cover bg-top lg:bg-top-30 mx-auto custom-background max-w-[2536px]">
+        {{-- <div class="absolute top-8 left-8">
             <img class="h-10" src="{{ asset('images/logo.png') }}" alt="company-logo">
-        </div>
+        </div> --}}
 
         @yield('content')
     </div>
