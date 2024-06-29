@@ -47,6 +47,11 @@ body {
 }
 
 .custom-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: -1;
     background-image: linear-gradient(
             to bottom,
             rgba(13, 27, 62, 1) 0%,
@@ -55,8 +60,13 @@ body {
             rgba(0, 0, 0, 0.8) 70%,
             rgba(0, 0, 0, 1) 95%
         ),
-        url("../../public/images/background-image.png");
+        url("../../public/images/background-image-placeholder.png");
+    height: 100%;
     width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 input::-webkit-outer-spin-button,

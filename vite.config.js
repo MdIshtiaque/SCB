@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
+import tailwindcss from "tailwindcss"; // Static import of tailwindcss
 
 export default defineConfig({
     plugins: [
@@ -10,7 +11,10 @@ export default defineConfig({
     ],
     css: {
         postcss: {
-            plugins: [require("tailwindcss"), require("autoprefixer")],
+            plugins: [
+                tailwindcss, // Include tailwindcss as a direct plugin
+                require("autoprefixer")
+            ],
         },
     },
     build: {

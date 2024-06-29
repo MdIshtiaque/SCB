@@ -20,16 +20,13 @@ export default {
                 "custom-green": "rgba(56, 210, 0, 0.1)",
             },
             backgroundPosition: {
-                "50-30": "50% 30%",
-                "50-50": "50% 50%",
                 "top-30": "50% 30%", // Custom position: 50% from left, 30% from top
-                // Add more custom positions as needed
             },
         },
         fontFamily: {
-            "sans-regular": ["SC Prosper Sans Regular", "sans-serif"],
-            "sans-medium": ["SC Prosper Sans Medium", "sans-serif"],
-            "sans-light": ["SC Prosper Sans Light", "sans-serif"],
+            "sans-regular": ["SC Prosper Sans Regular", "Arial", "sans-serif"],
+            "sans-medium": ["SC Prosper Sans Medium", "Arial", "sans-serif"],
+            "sans-light": ["SC Prosper Sans Light", "Arial", "sans-serif"],
         },
     },
 
