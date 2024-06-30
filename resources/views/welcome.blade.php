@@ -3,32 +3,23 @@
     <div
         class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 pt-4 lg:pt-8 bg-transparent text-white">
         <h1
-            class="title font-sans-medium title-bg text-2xl min-w-64 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3 drop-shadow-2xl">
-            <span><svg class="inline-block mr-1 lg:mr-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M8.47721 16.9384C10.5183 16.9384 11.9709 16.2916 13.388 15.3747L23.9999 8.47019L13.388 1.56572C11.9579 0.644437 10.4559 0.000229891 8.47721 0.000229891C3.82689 0.000229891 -5.96046e-05 3.82349 -5.96046e-05 8.46932C-5.96046e-05 13.1152 3.82689 16.9384 8.47721 16.9384Z"
-                        fill="#FFFFFF" />
-                </svg></span>Exclusive
+            class="title font-sans-medium title-bg text-2xl min-w-64 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3
+            drop-shadow-2xl before:content-['ª'] before:text-[#FFFFFF] before:absolute">
+            Exclusive
             Priority
             Banking
-            <span class="block">Privileges that Include your
-                family too<svg class="inline-block ml-1 lg:ml-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M15.5227 0C13.4816 0 12.029 0.646806 10.612 1.56376L0 8.46823L10.612 15.3727C12.042 16.294 13.544 16.9382 15.5227 16.9382C20.1731 16.9382 24 13.1149 24 8.46909C24 3.82326 20.1731 0 15.5227 0Z"
-                        fill="#FFFFFF" />
-                </svg></span>
+            <span class="block after:content-['º'] after:absolute after:text[#FFFFFF]">Privileges that Include your
+                family</span>
         </h1>
         <form class="mt-40 lg:mt-96" action="{{ route('save') }}" method="POST">
             @csrf
             <div class="w-full lg:max-w-3xl">
                 <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl font-sans-medium">Thank you for choosing Standard
                     Chartered
-                    Priority!
+                    Priority
                 </h3>
                 <p class="w-full lg:max-w-3xl mt-4 font-sans-light">Please share your name, phone number and city below. A
-                    relationship
+                    Relationship Manager from
                     Standard Chartered
                     will
                     contact you shortly.</p>
@@ -100,8 +91,8 @@
             <!-- button -->
             <div class="text-center mt-10">
                 <button type="submit"
-                    class="px-10 py-2 bg-transparent hover:bg-gradient-to-r from-[#0574EA] to-[#38D200] transition-colors duration-300 outline outline-1 text-white rounded-full mb-10 hover:outline-none">
-                    SUBMIT
+                    class="px-10 py-2 font-sans-medium bg-transparent hover:bg-gradient-to-r from-[#0574EA] to-[#38D200] transition-colors duration-300 outline outline-1 text-white rounded-full mb-10 hover:outline-none">
+                    Submit
                 </button>
             </div>
         </form>
@@ -119,10 +110,10 @@
             </div>
             <ul class="list-disc mt-5 pl-4 font-sans-regular">
                 <li>Dedicated Relationship Manager</li>
-                <li>Dedicated Priority Center</li>
-                <li>Access for Airport Lounge</li>
+                <li>Dedicated Priority Centre</li>
+                <li>Access to airport lounge</li>
                 <li>Unparalleled waivers and special offers</li>
-                <li>Higher withdrawals & unique shopping experience with priority debit card</li>
+                <li>Higher withdrawals & unique shopping experience with Priority debit card</li>
                 <li>Priority privilege for immediate family</li>
             </ul>
         </div>
