@@ -13,7 +13,7 @@
             Priority
             Banking
             <span class="block">Privileges that Include your
-                family too<svg class="inline-block ml-1 lg:ml-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
+                family<svg class="inline-block ml-1 lg:ml-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M15.5227 0C13.4816 0 12.029 0.646806 10.612 1.56376L0 8.46823L10.612 15.3727C12.042 16.294 13.544 16.9382 15.5227 16.9382C20.1731 16.9382 24 13.1149 24 8.46909C24 3.82326 20.1731 0 15.5227 0Z"
@@ -25,10 +25,10 @@
             <div class="w-full lg:max-w-3xl">
                 <h3 class="text-xl lg:text-2xl w-full lg:max-w-3xl font-sans-medium">Thank you for choosing Standard
                     Chartered
-                    Priority!
+                    Priority
                 </h3>
                 <p class="w-full lg:max-w-3xl mt-4 font-sans-light">Please share your name, phone number and city below. A
-                    relationship
+                    Relationship Manager from
                     Standard Chartered
                     will
                     contact you shortly.</p>
@@ -100,8 +100,8 @@
             <!-- button -->
             <div class="text-center mt-10">
                 <button type="submit"
-                    class="px-10 py-2 bg-transparent hover:bg-gradient-to-r from-[#0574EA] to-[#38D200] transition-colors duration-300 outline outline-1 text-white rounded-full mb-10 hover:outline-none">
-                    SUBMIT
+                    class="px-10 py-2 font-sans-medium bg-transparent hover:bg-gradient-to-r from-[#0574EA] to-[#38D200] transition-colors duration-300 outline outline-1 text-white rounded-full mb-10 hover:outline-none">
+                    Submit
                 </button>
             </div>
         </form>
@@ -120,9 +120,9 @@
             <ul class="list-disc mt-5 pl-4 font-sans-regular">
                 <li>Dedicated Relationship Manager</li>
                 <li>Dedicated Priority Center</li>
-                <li>Access for Airport Lounge</li>
+                <li>Access for airport lounge</li>
                 <li>Unparalleled waivers and special offers</li>
-                <li>Higher withdrawals & unique shopping experience with priority debit card</li>
+                <li>Higher withdrawals & unique shopping experience with Priority debit card</li>
                 <li>Priority privilege for immediate family</li>
             </ul>
         </div>
