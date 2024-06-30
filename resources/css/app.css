@@ -80,3 +80,23 @@ select {
     font-family: "SC Prosper Sans Medium";
     font-weight: 500;
 }
+
+.select-box option.default {
+    display: none;
+}
+
+.select-box {
+    color: #858b95;
+}
+
+.select-box option {
+    color: black;
+}
+
+/* .select-box option:not(.default) {
+    color: white;
+} */
+
+.select-box.valid-selection {
+    color: white;
+}

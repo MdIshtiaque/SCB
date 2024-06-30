@@ -85,14 +85,14 @@
                         <polygon class="cls-1" points="9.53 29.67 9.53 39.93 24.33 39.93 31.71 33.74 9.53 29.67" />
                     </svg>
 
-                    <select name="city"
-                        class="block w-full max-w-4xl px-4 py-2 border border-white rounded-full bg-transparent font-sans-light">
-                        <option class="text-black" value="">Select City</option>
-                        <option class="text-black" value="Dhaka">Dhaka</option>
-                        <option class="text-black" value="Chattogram">Chattogram</option>
-                        <option class="text-black" value="Sylhet">Sylhet</option>
-                        <option class="text-black" value="Khulna">Khulna</option>
-                        <option class="text-black" value="Bogura">Bogura</option>
+                    <select id="citySelect" name="city"
+                        class="select-box block w-full max-w-4xl px-4 py-2 border border-white rounded-full bg-transparent font-sans-light">
+                        <option class="default" value="" selected>City</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Chattogram">Chattogram</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Bogura">Bogura</option>
                     </select>
                 </div>
 
@@ -221,6 +221,16 @@
                 if (error) {
                     error.remove();
                 }
+            }
+        });
+
+        const selectBox = document.getElementById('citySelect');
+
+        selectBox.addEventListener('change', function() {
+            if (this.value === 'city') {
+                this.classList.remove('valid-selection');
+            } else {
+                this.classList.add('valid-selection');
             }
         });
     </script>
