@@ -86,7 +86,7 @@
                     </svg>
 
                     <select id="citySelect" name="city"
-                        class="select-box block w-full max-w-4xl px-4 py-2 border border-white rounded-full bg-transparent font-sans-light">
+                        class="relative select-box block w-full max-w-4xl px-4 py-2 border border-white rounded-full bg-transparent font-sans-light">
                         <option class="default" value="" selected>City</option>
                         <option value="Dhaka">Dhaka</option>
                         <option value="Chattogram">Chattogram</option>
@@ -94,6 +94,11 @@
                         <option value="Khulna">Khulna</option>
                         <option value="Bogura">Bogura</option>
                     </select>
+                    <svg class="text-gray-400 w-5 h-5 absolute top-1/2 transform -translate-y-1/2 right-4 pointer-events-none"
+                        viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 1L7 5.15724L1 1" stroke="white" stroke-width="0.5" stroke-linecap="square" />
+                    </svg>
+
                 </div>
 
             </div>
