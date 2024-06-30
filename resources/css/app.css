@@ -80,3 +80,15 @@ select {
     font-family: "SC Prosper Sans Medium";
     font-weight: 500;
 }
+
+.title::before {
+    content: "ª";
+    position: absolute;
+    color: #ffffff;
+}
+
+.title span::after {
+    content: "º";
+    position: absolute;
+    color: #ffffff;
+}
