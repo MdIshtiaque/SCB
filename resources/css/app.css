@@ -80,13 +80,3 @@ select {
     font-family: "SC Prosper Sans Medium";
     font-weight: 500;
 }
-
-/* .title-bg {
-    background: linear-gradient(
-        to bottom,
-        rgba(13, 27, 62, 1),
-        rgba(13, 27, 62, 0) 50%,
-        rgba(0, 0, 0, 0.7) 60%,
-        rgba(0, 0, 0, 1) 95%
-    );
-} */
