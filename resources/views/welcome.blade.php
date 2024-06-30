@@ -5,11 +5,21 @@
         <h1
             class="title font-sans-medium title-bg text-2xl min-w-64 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3
             drop-shadow-2xl">
-            Exclusive
+            <span><svg class="inline-block mr-1 lg:mr-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.47721 16.9384C10.5183 16.9384 11.9709 16.2916 13.388 15.3747L23.9999 8.47019L13.388 1.56572C11.9579 0.644437 10.4559 0.000229891 8.47721 0.000229891C3.82689 0.000229891 -5.96046e-05 3.82349 -5.96046e-05 8.46932C-5.96046e-05 13.1152 3.82689 16.9384 8.47721 16.9384Z"
+                        fill="#FFFFFF" />
+                </svg></span>Exclusive
             Priority
             Banking
             <span class="block">Privileges that Include your
-                family</span>
+                family<svg class="inline-block ml-1 lg:ml-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.5227 0C13.4816 0 12.029 0.646806 10.612 1.56376L0 8.46823L10.612 15.3727C12.042 16.294 13.544 16.9382 15.5227 16.9382C20.1731 16.9382 24 13.1149 24 8.46909C24 3.82326 20.1731 0 15.5227 0Z"
+                        fill="#FFFFFF" />
+                </svg></span>
         </h1>
         <form class="mt-40 lg:mt-96" action="{{ route('save') }}" method="POST">
             @csrf
