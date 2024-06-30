@@ -3,12 +3,12 @@
     <div
         class="absolute h-full top-0 left-1/2 transform -translate-x-1/2 w-full max-w-7xl p-8 pt-4 lg:pt-8 bg-transparent text-white">
         <h1
-            class="title relative font-sans-medium title-bg text-2xl min-w-64 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3
-            drop-shadow-2xl before:content-['ª'] before:text-[#FFFFFF] before:absolute">
+            class="title font-sans-medium title-bg text-2xl min-w-64 lg:text-5xl mb-4 text-center mx-auto leading-8 py-3
+            drop-shadow-2xl">
             Exclusive
             Priority
             Banking
-            <span class="block after:content-['º'] after:absolute after:text[#FFFFFF]">Privileges that Include your
+            <span class="block">Privileges that Include your
                 family</span>
         </h1>
         <form class="mt-40 lg:mt-96" action="{{ route('save') }}" method="POST">
