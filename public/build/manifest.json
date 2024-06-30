@@ -11,9 +11,9 @@
     "file": "assets/SCProsperSans-Regular.ttf",
     "src": "public/fonts/SCProsperSans-Regular.ttf"
   },
-  "public/images/background-image.png": {
-    "file": "assets/background-image.png",
-    "src": "public/images/background-image.png"
+  "public/images/background-image-optimized2.jpg": {
+    "file": "assets/background-image-optimized2.jpg",
+    "src": "public/images/background-image-optimized2.jpg"
   },
   "resources/css/app.css": {
     "file": "css/index.css",
