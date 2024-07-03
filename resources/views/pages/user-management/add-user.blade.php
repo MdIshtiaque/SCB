@@ -14,8 +14,7 @@
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0 mb-3">
-                                <li class="breadcrumb-item"><a
-                                        href="javascript: void(0);">User Management</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">User Management</a></li>
                                 <li class="breadcrumb-item active">Add New User</li>
                             </ol>
                             <ol class="breadcrumb m-0 d-flex justify-content-end">
@@ -59,7 +58,7 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Email</label>
-                                                <input type="email" required name="email"
+                                                <input type="email" required name="email" autocomplete="username"
                                                        data-pristine-required-message="Please Enter a Email"
                                                        class="form-control" placeholder="Enter your Email"/>
                                             </div>
@@ -67,7 +66,7 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label class="form-label">Role</label>
-                                                <select required class="form-control form-select" name="role_id">>
+                                                <select required class="form-control form-select" name="role_id">
                                                     <option value="">Select Role</option>
                                                     @foreach($roles as $role)
                                                         <option value="{{ $role->id }}">{{ $role->name }}</option>
@@ -78,19 +77,27 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Password (required)</label>
-                                                <input type="password" id="pwd" required name="password"
-                                                       data-pristine-required-message="Please Enter a password"
-                                                       data-pristine-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/"
-                                                       data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
-                                                       class="form-control" placeholder="Enter your password"/>
+                                                <div class="input-group">
+                                                    <input type="password" id="pwd" required name="password"
+                                                           autocomplete="new-password"
+                                                           data-pristine-required-message="Please Enter a password"
+                                                           data-pristine-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/"
+                                                           data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
+                                                           class="form-control" placeholder="Enter your password"/>
+                                                    <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon" onclick="togglePassword('pwd', this)"><i class="mdi mdi-eye-outline"></i></button>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Retype password</label>
-                                                <input type="password" data-pristine-equals="#pwd"
-                                                       data-pristine-equals-message="Passwords dont match"
-                                                       class="form-control" placeholder="Re-Enter your password"/>
+                                                <div class="input-group">
+                                                    <input type="password" id="confirmPwd" data-pristine-equals="#pwd"
+                                                           autocomplete="new-password"
+                                                           data-pristine-equals-message="Passwords don't match"
+                                                           class="form-control" placeholder="Re-Enter your password"/>
+                                                    <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon" onclick="togglePassword('confirmPwd', this)"><i class="mdi mdi-eye-outline"></i></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -114,12 +121,20 @@
 @push('js')
     <!-- pristine js -->
     <script src="{{ asset('assets/libs/pristinejs/pristine.min.js') }}"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>;
     <!-- form validation -->
     <script src="{{ asset('assets/js/pages/form-validation.init.js') }}"></script>
 
     <script>
+        function togglePassword(id, button) {
+            const passwordField = document.getElementById(id);
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+
+            const icon = button.querySelector('i');
+            icon.classList.toggle('mdi-eye-outline');
+            icon.classList.toggle('mdi-eye-off-outline');
+        }
+
         window.onload = function () {
             const form = document.getElementById("pristine-valid-example");
             const pristine = new Pristine(form);
@@ -132,8 +147,4 @@
             });
         };
     </script>
-
-
-    {!! Toastr::message() !!}
-
 @endpush

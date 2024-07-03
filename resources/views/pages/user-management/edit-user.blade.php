@@ -58,7 +58,7 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Email</label>
-                                                <input type="email" required name="email" value="{{ $user->email }}"
+                                                <input type="email" required name="email" value="{{ $user->email }}" autocomplete="username"
                                                        data-pristine-required-message="Please Enter a Email"
                                                        class="form-control" placeholder="Enter your Email"/>
                                             </div>
@@ -77,7 +77,7 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Password</label>
-                                                <input type="password" id="pwd" name="password"
+                                                <input type="password" id="pwd" name="password" autocomplete="new-password"
                                                        data-pristine-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/"
                                                        data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
                                                        class="form-control" placeholder="Enter your password"/>
@@ -86,7 +86,7 @@
                                         <div class="col-xl-4 col-md-6">
                                             <div class="form-group mb-3">
                                                 <label>Retype password</label>
-                                                <input type="password" data-pristine-equals="#pwd" name="password_confirmation"
+                                                <input type="password" data-pristine-equals="#pwd" name="password_confirmation" autocomplete="new-password"
                                                        data-pristine-equals-message="Passwords don't match"
                                                        class="form-control" placeholder="Re-Enter your password"/>
                                             </div>

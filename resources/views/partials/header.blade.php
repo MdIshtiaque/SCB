@@ -73,6 +73,21 @@
     </div>
 </header>
 <!-- right offcanvas -->
+<style>
+    .field-icon {
+        position: absolute;
+        right: 10px;
+        top: 42px;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .error-message {
+        color: red;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+</style>
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel">Change Password</h5>
@@ -83,7 +98,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="card-header">
                         <h4 class="card-title">Here you can Change Password</h4>
                         <p class="card-title-desc">This is only for Super Admin & Admin</p>
@@ -91,27 +105,26 @@
                     <!-- end card header -->
                     <hr>
                     <div class="card-body">
-
-                        <form id="pristine-valid-example" action="{{ route('update.password') }}" style="width : 100%"
+                        <form id="pristine-valid-example-1" action="{{ route('update.password') }}" style="width: 100%"
                               novalidate method="post">
                             @csrf
-                            <div class="col-xl-12 col-md-12">
-                                <div class="form-group mb-3">
-                                    <label>Password</label>
-                                    <input type="password" id="pwd" name="password" autocomplete required
-                                           data-pristine-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/"
-                                           data-pristine-pattern-message="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
-                                           class="form-control" placeholder="Enter your password"/>
-                                </div>
+                            <div class="form-group mb-3 position-relative">
+                                <label>Password</label>
+                                <input type="password" id="pwd1" name="password" autocomplete="new-password" required
+                                       pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+                                       title="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number"
+                                       class="form-control" placeholder="Enter your password"/>
+                                <div id="password-error" class="error-message"></div>
+                                <span toggle="#pwd1" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
-                            <div class="col-xl-12 col-md-12">
-                                <div class="form-group mb-3">
-                                    <label>Retype password</label>
-                                    <input type="password" data-pristine-equals="#pwd" name="password_confirmation"
-                                           autocomplete
-                                           data-pristine-equals-message="Passwords don't match" required
-                                           class="form-control" placeholder="Re-Enter your password"/>
-                                </div>
+
+                            <div class="form-group mb-3 position-relative">
+                                <label>Retype password</label>
+                                <input type="password" id="pwd-confirm" name="password_confirmation" autocomplete="new-password"
+                                       title="Passwords don't match" required
+                                       class="form-control" placeholder="Re-Enter your password"/>
+                                <div id="password-confirm-error" class="error-message"></div>
+                                <span toggle="#pwd-confirm" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
 
                             <!-- end row -->
@@ -119,10 +132,7 @@
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
-
-
                     </div>
-
                     <!-- end card -->
                 </div>
                 <!-- end col -->
@@ -130,22 +140,69 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('assets/libs/pristinejs/pristine.min.js') }}"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>;
-<!-- form validation -->
-<script src="{{ asset('assets/js/pages/form-validation.init.js') }}"></script>
 
 <script>
-    window.onload = function () {
-        const form = document.getElementById("pristine-valid-example");
-        const pristine = new Pristine(form);
+    document.addEventListener("DOMContentLoaded", function () {
+        const form1 = document.getElementById("pristine-valid-example-1");
+        const password = form1.querySelector('input[name="password"]');
+        const passwordConfirmation = form1.querySelector('input[name="password_confirmation"]');
+        const passwordError = document.getElementById("password-error");
+        const passwordConfirmError = document.getElementById("password-confirm-error");
+        const passwordPattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
 
-        form.addEventListener("submit", function (e) {
-            if (!pristine.validate()) {
+        const togglePasswordIcons = document.querySelectorAll('.toggle-password');
+
+        togglePasswordIcons.forEach(icon => {
+            icon.addEventListener('click', function () {
+                const input = document.querySelector(icon.getAttribute('toggle'));
+                if (input.getAttribute('type') === 'password') {
+                    input.setAttribute('type', 'text');
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.setAttribute('type', 'password');
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+
+        password.addEventListener("input", function () {
+            validatePassword();
+        });
+
+        passwordConfirmation.addEventListener("input", function () {
+            validatePasswordConfirmation();
+        });
+
+        form1.addEventListener("submit", function (e) {
+            if (!validateForm()) {
                 e.preventDefault();
                 e.stopPropagation();
             }
         });
-    };
+
+        function validatePassword() {
+            passwordError.textContent = "";
+            if (!password.value.match(passwordPattern)) {
+                passwordError.textContent = "Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number";
+            }
+        }
+
+        function validatePasswordConfirmation() {
+            passwordConfirmError.textContent = "";
+            if (password.value !== passwordConfirmation.value) {
+                passwordConfirmError.textContent = "Passwords don't match";
+            }
+        }
+
+        function validateForm() {
+            validatePassword();
+            validatePasswordConfirmation();
+            return passwordError.textContent === "" && passwordConfirmError.textContent === "";
+        }
+    });
+
 </script>
+
+
