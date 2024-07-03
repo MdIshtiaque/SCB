@@ -53,5 +53,6 @@ Route::prefix('email-recipients')->middleware(['auth', 'verified'])->group(funct
     Route::delete('/delete/{groupEmail}', [GroupEmailController::class, 'delete'])->name('email.delete');
 });
 
+Route::post('update-password', [UserManagementController::class, 'changePassword'])->middleware(['auth', 'verified'])->name('update.password');
 
 require __DIR__.'/auth.php';

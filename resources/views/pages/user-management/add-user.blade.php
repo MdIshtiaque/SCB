@@ -37,7 +37,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Here you can add user</h4>
-                            <p class="card-title-desc">This is only for super admin to use</p>
+                            <p class="card-title-desc">This is only for Admin to use</p>
                         </div>
                         <!-- end card header -->
 

@@ -103,4 +103,18 @@ class UserManagementController extends Controller
             return Response::json(['success' => false, 'message' => 'Error deleting user']);
         }
     }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|string|min:8|regex:/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$/|confirmed',
+        ]);
+        try {
+            auth()->user()->update(['password' => bcrypt($request->password)]);
+        } catch (\Exception $exception) {
+            Toastr::error('Something went wrong!!'. $exception, 'Title', ["positionClass" => "toast-bottom-right"]);
+        }
+        Toastr::success('Password Updated Successfully!!', 'Title', ["positionClass" => "toast-top-right"]);
+        return back();
+    }
 }
