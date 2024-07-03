@@ -29,7 +29,8 @@ Route::get('/login', function () {
 });
 
 Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth'])->name('dashboard');
-
+Route::delete('delete/{record}', [DashboardController::class, 'deleteRecord'])->middleware(['auth'])->name('record.delete');
+Route::post('/records/bulk-delete', [DashboardController::class, 'bulkDelete'])->middleware(['auth'])->name('records.bulkDelete');
 //Route::get('/export-records', [RecordExportController::class, 'export']);
 
 
