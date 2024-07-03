@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\GroupEmail;
 use Illuminate\Console\Command;
 use App\Mail\RecordsReportMail;
 use Illuminate\Support\Facades\Log;
@@ -19,7 +20,8 @@ class SendRecordsReport extends Command
 
     public function handle()
     {
-        $emails = ['ishtiaqueferdous109@gmail.com', 'forhad.anam@asdbd.com', 'jamil.hossain@asdbd.com'];
+//        $emails = ['ishtiaqueferdous109@gmail.com', 'forhad.anam@asdbd.com', 'jamil.hossain@asdbd.com'];
+        $emails = GroupEmail::where('is_active', true)->pluck('email')->all();
         try {
             Mail::to($emails)->send(new RecordsReportMail());
             $this->info('The records report has been sent successfully!');

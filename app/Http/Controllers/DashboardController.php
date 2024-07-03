@@ -11,7 +11,7 @@ class DashboardController extends Controller
 {
     public function viewDashboard()
     {
-        $items = Record::all();
+        $items = Record::orderBy('id', 'DESC')->get();
         return view('pages.dashboard', ['items' => $items]);
     }
 

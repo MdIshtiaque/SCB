@@ -46,7 +46,7 @@
         .delete-selected-btn {
             display: none;
             margin-bottom: 10px;
-            margin-left: auto;
+            /*margin-left: auto;*/
         }
     </style>
 @endpush
@@ -98,7 +98,7 @@
                                     <span class="sr-only">Loading...</span>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-end mb-3">
+                            <div class="d-flex justify-content-start mb-3">
                                 <button id="deleteSelected" class="btn btn-danger delete-selected-btn" style="display: none">
                                     Delete Selected
                                 </button>
@@ -112,7 +112,6 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center; width: 50px"><input type="checkbox" id="select-all"></th>
-                                        <th>Sl no.</th>
                                         <th>Full Name</th>
                                         <th>Mobile</th>
                                         <th>City</th>
@@ -125,7 +124,6 @@
                                     @foreach($items as $item)
                                         <tr>
                                             <td><input type="checkbox" class="row-checkbox" data-id="{{ $item->id }}"></td>
-                                            <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->full_name }}</td>
                                             <td>{{ $item->mobile }}</td>
                                             <td>{{ $item->city }}</td>
@@ -166,6 +164,11 @@
     <script src="{{ asset('assets/libs/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
     <!-- Datatable init js -->
     <script src="{{ asset('assets/js/dateFilter.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datatable-buttons thead th:first-child').off('.DT').removeClass('sorting sorting_asc sorting_desc');
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             $('#resetButton').click(function (e) {
