@@ -116,7 +116,7 @@
                     <path d="M14 19.2V14M14 8.79999H14.013" stroke="white" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <h3 class="text-xl">What is in the store for you:</h3>
+                <h3 class="text-xl">What is in store for you:</h3>
             </div>
             <ul class="list-disc mt-5 pl-4 font-sans-regular">
                 <li>Dedicated Relationship Manager</li>
