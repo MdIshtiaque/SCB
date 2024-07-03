@@ -79,6 +79,15 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="col align-items-end text-end">
+                                            <div class="">
+                                                <label for="forgot_password" class="form-check-label">
+                                                    <a href="{{ route('password.request') }}">
+                                                        {{ __('Forgot Password?') }}
+                                                    </a>
+                                                </label>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="mb-3">
