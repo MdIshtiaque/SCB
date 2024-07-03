@@ -13,7 +13,7 @@
                 </svg></span>Exclusive
             Priority
             Banking
-            <span class="block">Privileges that Include your
+            <span class="block">Privileges that include your
                 family<svg class="inline-block ml-1 lg:ml-2 h-2 lg:h-5" viewBox="0 0 24 17" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
