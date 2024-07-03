@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,18 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
+            ]);
+        }
+
+        // User is authenticated but we need to check role and active status
+        $user = Auth::user();
+
+        // Check if the user is inactive or does not have the required roles
+        if (!$user->is_active || !in_array($user->role_id, [User::ROLE_ADMIN, User::ROLE_USER])) {
+            Auth::logout(); // Log out the user
+            RateLimiter::clear($this->throttleKey()); // Clear rate limiter on failure
+            throw ValidationException::withMessages([
+                'email' => 'Access Denied. Your account is either inactive or does not have the necessary permissions.',
             ]);
         }
 
