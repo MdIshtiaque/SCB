@@ -13,19 +13,30 @@
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
-
+            @php
+                use Carbon\Carbon;
+            @endphp
             <!-- Start page title -->
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Email Recipient List</h4>
+                        <h4 class="mb-sm-0 font-size-18">
+                            Email Recipient List (Email Sent Time :
+                            {{
+                                Carbon::createFromFormat('H:i', $timer->timer)
+                                      ->format('h:i A')
+                            }})
+                        </h4>
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0 mb-3">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Email Recipients</a></li>
                                 <li class="breadcrumb-item active">Email Recipient List</li>
                             </ol>
                             <ol class="breadcrumb m-0 d-flex justify-content-end">
-                                <li class="breadcrumb-item">
+                                <li class="breadcrumb-item gap-1">
+                                    <a class="btn btn-primary waves-effect btn-label waves-light" style="color: white" data-bs-toggle="modal" data-bs-target="#timeModal">
+                                        <i class="bx bx-timer label-icon"></i> Set Time
+                                    </a>
                                     <a href="#" class="btn btn-primary waves-effect btn-label waves-light" style="color: white" data-bs-toggle="modal" data-bs-target="#addEmailModal">
                                         <i class="bx bx-plus label-icon"></i> Add new Email
                                     </a>
@@ -101,6 +112,28 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="timeModal" tabindex="-1" aria-labelledby="timeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="timeModalLabel">Pick a Time</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
+                </div>
+                <form method="POST" action="{{ route('saveTime') }}">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="time" name="time" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save Time</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('js')
@@ -121,6 +154,21 @@
     <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+        function saveTime() {
+            var time = document.getElementById('timeInput').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "saveTime.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log("Time saved: " + this.responseText);
+                }
+            }
+            xhr.send("time=" + time);
+        }
+
+    </script>
     <script>
         document.getElementById('emailTags').addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {

@@ -54,5 +54,5 @@ Route::prefix('email-recipients')->middleware(['auth', 'verified'])->group(funct
 });
 
 Route::post('update-password', [UserManagementController::class, 'changePassword'])->middleware(['auth', 'verified'])->name('update.password');
-
+Route::post('/save-time', [GroupEmailController::class, 'saveTime'])->middleware(['auth', 'verified'])->name('saveTime');
 require __DIR__.'/auth.php';

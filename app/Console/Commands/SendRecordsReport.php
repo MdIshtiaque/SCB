@@ -22,6 +22,7 @@ class SendRecordsReport extends Command
     {
 //        $emails = ['ishtiaqueferdous109@gmail.com', 'forhad.anam@asdbd.com', 'jamil.hossain@asdbd.com'];
         $emails = GroupEmail::where('is_active', true)->pluck('email')->all();
+
         try {
             Mail::to($emails)->send(new RecordsReportMail());
             $this->info('The records report has been sent successfully!');
