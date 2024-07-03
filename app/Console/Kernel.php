@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command('report:send')
-            ->dailyAt('00:00')
+            ->dailyAt('18:00')
             ->timezone('Asia/Dhaka')
             ->before(function () {
                 Log::info("Attempting to run report:send");
