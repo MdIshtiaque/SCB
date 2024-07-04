@@ -8,6 +8,11 @@
     <link href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Toastr CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <style>
+        .text-danger {
+            color: red;
+        }
+    </style>
 @endpush
 
 @section('content')
@@ -121,10 +126,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
-                <form method="POST" action="{{ route('saveTime') }}">
+                <form method="POST" action="{{ route('saveTime') }}" class="needs-validation" id="timeForm" novalidate>
                     @csrf
                     <div class="modal-body">
-                        <input type="time" name="time" class="form-control">
+                        <div class="mb-3">
+                            <label for="timeInput" class="form-label">Time</label>
+                            <input type="time" name="time" class="form-control" id="timeInput" value="{{ $timer->timer }}" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid time.
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -154,6 +165,26 @@
     <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- Toastr JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
     <script>
         function saveTime() {
             var time = document.getElementById('timeInput').value;
