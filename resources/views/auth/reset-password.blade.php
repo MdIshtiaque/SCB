@@ -55,11 +55,14 @@
                                         <div class="d-flex align-items-start">
                                             <div class="flex-grow-1">
                                                 <x-input-label class="form-label" for="password" :value="__('Password')" />
-                                                <x-text-input id="password"
-                                                              class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"
-                                                              type="password"
-                                                              name="password"
-                                                              required autocomplete="new-password" />
+                                                <div class="input-group">
+                                                    <x-text-input id="password"
+                                                                  class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"
+                                                                  type="password"
+                                                                  name="password"
+                                                                  required autocomplete="new-password" />
+                                                    <button type="button" class="btn btn-light shadow-none ms-0" id="toggle-password"><i class="mdi mdi-eye-outline" id="password-icon"></i></button>
+                                                </div>
                                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
                                             </div>
                                         </div>
@@ -67,13 +70,15 @@
                                     <div class="mb-3">
                                         <div class="d-flex align-items-start">
                                             <div class="flex-grow-1">
-                                                <x-input-label class="form-label" for="password" :value="__('Confirm Password')" />
-                                                <x-text-input id="password_confirmation"
-                                                              class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="password-addon"
-                                                              type="password"
-                                                              name="password_confirmation"
-                                                              required autocomplete="new-password" />
-
+                                                <x-input-label class="form-label" for="password_confirmation" :value="__('Confirm Password')" />
+                                                <div class="input-group">
+                                                    <x-text-input id="password_confirmation"
+                                                                  class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="password-addon"
+                                                                  type="password"
+                                                                  name="password_confirmation"
+                                                                  required autocomplete="new-password" />
+                                                    <button type="button" class="btn btn-light shadow-none ms-0" id="toggle-password-confirmation"><i class="mdi mdi-eye-outline" id="password-confirmation-icon"></i></button>
+                                                </div>
                                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                                             </div>
                                         </div>
@@ -136,16 +141,44 @@
 
 
 <!-- JAVASCRIPT -->
-<script src="assets/libs/jquery/jquery.min.js"></script>
-<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/libs/metismenu/metisMenu.min.js"></script>
-<script src="assets/libs/simplebar/simplebar.min.js"></script>
-<script src="assets/libs/node-waves/waves.min.js"></script>
-<script src="assets/libs/feather-icons/feather.min.js"></script>
+<script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
+<script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+<script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+<script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
 <!-- pace js -->
-<script src="assets/libs/pace-js/pace.min.js"></script>
+<script src="{{ asset('assets/libs/pace-js/pace.min.js') }}"></script>
 <!-- password addon init -->
-<script src="assets/js/pages/pass-addon.init.js"></script>
+<script src="{{ asset('assets/js/pages/pass-addon.init.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var togglePassword = document.getElementById('toggle-password');
+        var togglePasswordConfirmation = document.getElementById('toggle-password-confirmation');
+        var password = document.getElementById('password');
+        var passwordConfirmation = document.getElementById('password_confirmation');
+
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            var type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.querySelector('i').classList.toggle('mdi-eye-outline');
+            this.querySelector('i').classList.toggle('mdi-eye-off-outline');
+        });
+
+        togglePasswordConfirmation.addEventListener('click', function () {
+            // Toggle the type attribute
+            var type = passwordConfirmation.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordConfirmation.setAttribute('type', type);
+
+            // Toggle the eye icon
+            this.querySelector('i').classList.toggle('mdi-eye-outline');
+            this.querySelector('i').classList.toggle('mdi-eye-off-outline');
+        });
+    });
+</script>
 
 </body>
 
