@@ -8,6 +8,16 @@
     <title>Standard Chartered</title>
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0N7B4RSYRT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0N7B4RSYRT');
+    </script>
 </head>
 
 <body class="bg-black">
@@ -23,6 +33,7 @@
     </div>
 
 </body>
+
 @include('scripts')
 
 </html>
